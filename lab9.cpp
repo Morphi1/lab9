@@ -24,5 +24,15 @@ void input(int** p, int n)
 int main()
 {
 	setlocale(LC_ALL, "");
+	int** p, i, j, n, count;
+	cout << "Массив N x N. Введите N: ";
+	cin >> n;
+	cout << endl;
+	p = new int* [n];
+	for (i = 0;i < n;i++)
+		p[i] = new int[n];
+	input(p, n);
+	output(p, n);
+	cout << endl;
 
 	return 0;
