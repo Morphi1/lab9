@@ -21,6 +21,17 @@ void input(int** p, int n)
 		for (int j = 0; j < n; j++)
 			cin >> p[i][j];
 }
+int max_search(int** p, int n)
+{
+	int max;
+	max = p[n - 1][n - 1];
+	for (int i = 0; i < n; i++)
+		for (int j = 0; j < n; j++)
+			if (i > j)
+				if (p[i][j] > max)
+					max = p[i][j];
+	return max;
+}
 int main()
 {
 	setlocale(LC_ALL, "");
@@ -34,5 +45,4 @@ int main()
 	input(p, n);
 	output(p, n);
 	cout << endl;
-
 	return 0;
